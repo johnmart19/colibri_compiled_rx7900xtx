@@ -1,8 +1,7 @@
-*.exe
+__pycache__/
 glm_tiny/
 olmoe_hf/
 olmoe_i4/
-.build-config
 # DeepSeek-V4 amalgamation build artifacts (make -f Makefile.deepseek-v4)
 build/
 COLI_V4_UNIT_*.o
@@ -42,12 +41,9 @@ tests/test_kimi_request_state
 tests/test_kimi_serve_framing
 tests/test_v4_serve_framing
 tests/test_inkling_serve_framing
-*.o
-*.dll
 cublasLt64*.dll
 cudart64*.dll
 glm53
-qwen36
 shaders/attention_absorb.spv
 shaders/qmatmul_gate_up.spv
 shaders/rmsnorm.spv
