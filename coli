@@ -626,7 +626,7 @@ def cuda_binary():
         try:
             with open(GLM,"rb") as f: built=b"[CUDA] mode: routed experts" in f.read()
         except OSError: return False
-        return built and os.path.exists(os.path.join(os.path.dirname(GLM),"coli_cuda.dll"))
+        return built and (os.path.exists(os.path.join(os.path.dirname(GLM),"coli_cuda.dll")) or os.path.exists(os.path.join(os.path.dirname(GLM),"coli_hip.dll")))
     return False
 
 def resource_request(a, env):

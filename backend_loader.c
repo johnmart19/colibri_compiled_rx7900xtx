@@ -1490,6 +1490,11 @@ void coli_cuda_shutdown(void){
 #endif
 }
 
+int coli_cuda_available_device_count(void){
+    if(!coli_cuda_load()) return 0;
+    return g_cuda.device_count ? g_cuda.device_count() : 0;
+}
+
 int coli_cuda_device_count(void){
     if(!g_cuda.available) return 0;
     return g_cuda.device_count();

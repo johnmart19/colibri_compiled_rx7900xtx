@@ -1010,7 +1010,7 @@ olmoe$(EXE): olmoe.c cli_args.h st.h json.h compat.h sample.h tok.h tok_unicode.
 # -DCOLI_CUDA and linking -lcudart for a build that calls neither only made
 # `make qwen36` depend on a toolkit it never touches. With CUDA=1 the tier is
 # real CUDA and takes the normal flags back.
-ifeq ($(CUDA),1)
+ifneq ($(filter 1,$(CUDA) $(HIP_DLL)),)
 QWEN36_TIER_SRC = qwen36_tier.c
 QWEN36_CFLAGS   = $(CFLAGS)
 QWEN36_LDFLAGS  = $(LDFLAGS)
